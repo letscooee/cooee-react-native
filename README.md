@@ -30,7 +30,7 @@ tools:replace="android:name"
 ```
 
 ## Usage
-Open your `MainApplication` class present at `android/app/src/main/java/<yourpackage_name>/` and extend it with `Conteoller` class
+Open your `MainApplication` class present at `android/app/src/main/java/<yourpackage_name>/` and extend it with `Controller` class
 
 ```java
 
@@ -39,6 +39,7 @@ public class MainApplication extends Controller implements ReactApplication {
 }
 ```
 
+And then in you `js` or `tsx` import `CooeeReactNative` Module and start accessing methods.
 ```js
 import CooeeReactNative from "cooee-react-native";
 
