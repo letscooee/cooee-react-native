@@ -14,8 +14,17 @@ npm install cooee-react-native
 import CooeeReactNative from "cooee-react-native";
 
 // ...
+// get User ID
+const result = await CooeeReactNative.getUUID();
 
-const result = await CooeeReactNative.multiply(3, 7);
+// Update Screen Name
+CooeeReactNative.updateScreenName("HomrActivity");
+
+//Update User Data
+CooeeReactNative.updateUserData({ "name": "USER_NAME", "email": "USER_EMAIL", "mobile": "USER_MOBILE_NO" });
+
+//Submit events
+CooeeReactNative.sendEvent("EVENT_NAME", {"foo":"bar"});
 ```
 
 ## Contributing

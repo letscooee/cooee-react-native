@@ -1,6 +1,6 @@
 {
   "name": "cooee-react-native",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Cooee's React Native Plugin for hyper-personalised Mobile App Re-Engagement via Machine Learning",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
