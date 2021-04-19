@@ -8,6 +8,21 @@ Cooee's React Native Plugin for hyper-personalised Mobile App Re-Engagement via 
 npm install cooee-react-native
 ```
 
+## Environment Setup
+### Android
+Add following lines to you `Manifest.xml`
+
+```xml
+<!-- APP_ID and APP_SECRET shoud be replaced with you credencials-->
+<meta-data
+    android:name="COOEE_APP_ID"
+    android:value="<APP_ID>" />
+
+<meta-data
+    android:name="COOEE_APP_SECRET"
+    android:value="<APP_SECRET>" />
+```
+
 ## Usage
 
 ```js
