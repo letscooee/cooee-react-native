@@ -30,6 +30,14 @@ tools:replace="android:name"
 ```
 
 ## Usage
+Open your `MainApplication` class present at `android/app/src/main/java/<yourpackage_name>/` and extend it with `Conteoller` class
+
+```java
+
+public class MainApplication extends Controller implements ReactApplication {
+...
+}
+```
 
 ```js
 import CooeeReactNative from "cooee-react-native";
@@ -39,7 +47,7 @@ import CooeeReactNative from "cooee-react-native";
 const result = await CooeeReactNative.getUUID();
 
 // Update Screen Name
-CooeeReactNative.updateScreenName("HomrActivity");
+CooeeReactNative.updateScreenName("HomeActivity");
 
 //Update User Data
 CooeeReactNative.updateUserData({ "name": "USER_NAME", "email": "USER_EMAIL", "mobile": "USER_MOBILE_NO" });
