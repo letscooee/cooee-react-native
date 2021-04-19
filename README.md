@@ -10,10 +10,16 @@ npm install cooee-react-native
 
 ## Environment Setup
 ### Android
-Add following lines to you `Manifest.xml`
+Add following updates to you `Manifest.xml`
 
 ```xml
-<!-- APP_ID and APP_SECRET shoud be replaced with you credencials-->
+<!-- add following line to application tag -->
+<application 
+tools:replace="android:name"
+...
+/>
+
+<!-- APP_ID and APP_SECRET shoud be replaced with you credencials -->
 <meta-data
     android:name="COOEE_APP_ID"
     android:value="<APP_ID>" />
