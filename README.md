@@ -28,8 +28,6 @@ tools:replace="android:name"
     android:name="COOEE_APP_SECRET"
     android:value="<APP_SECRET>" />
 ```
-
-## Usage
 Open your `MainApplication` class present at `android/app/src/main/java/<yourpackage_name>/` and extend it with `Controller` class
 
 ```java
@@ -38,6 +36,25 @@ public class MainApplication extends Controller implements ReactApplication {
 ...
 }
 ```
+
+### iOS
+Add the following lines to your `info.plist` (Note: APP_ID, APP_SECRET will be replace by credentials)
+```xml
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>App uses Bluetooth to find out nearby devices</string> 
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>App uses location to search retailer location</string>
+
+<key>CooeeAppID</key>
+<string><APP_ID></string>
+<key>CooeeSecretKey</key>
+<string><APP_SECRET></string>
+```
+
+Also setup your `deplument-target` to `13.0`
+
+## Usage
 
 And then in you `js` or `tsx` import `CooeeReactNative` Module and start accessing methods.
 ```js
