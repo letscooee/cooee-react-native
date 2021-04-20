@@ -52,7 +52,7 @@ Add the following lines to your `info.plist` (Note: APP_ID, APP_SECRET will be r
 <string><APP_SECRET></string>
 ```
 
-Also setup your `deplument-target` to `13.0`
+Also setup your Apps `deployment-target` to `13.0`
 
 ## Usage
 
