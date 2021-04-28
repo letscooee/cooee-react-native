@@ -1,9 +1,9 @@
-import {NativeModules} from 'react-native';
+import { NativeModules } from 'react-native';
 
 // type CooeeReactNativeType = {
 //   multiply(a: number, b: number): Promise<number>;
 // };
 
-const {CooeeReactNative} = NativeModules;
+const { CooeeReactNative } = NativeModules;
 
-export default CooeeReactNative //as CooeeReactNativeType;
+export default CooeeReactNative; //as CooeeReactNativeType;

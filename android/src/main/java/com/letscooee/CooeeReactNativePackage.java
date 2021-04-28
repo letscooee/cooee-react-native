@@ -12,11 +12,12 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author Ashish Gaikwad Created on 19/Apr/2021
- * <p>
  * Will add Cooee module to react native package
+ *
+ * @author Ashish Gaikwad
  */
 public class CooeeReactNativePackage implements ReactPackage {
+
     @NonNull
     @Override
     public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {

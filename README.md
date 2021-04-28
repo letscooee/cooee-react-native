@@ -19,7 +19,7 @@ tools:replace="android:name"
 ...
 />
 
-<!-- APP_ID and APP_SECRET shoud be replaced with you credencials -->
+<!-- APP_ID and APP_SECRET should be replaced with you credentials -->
 <meta-data
     android:name="COOEE_APP_ID"
     android:value="<APP_ID>" />

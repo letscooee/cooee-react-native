@@ -17,12 +17,11 @@ import com.letscooee.utils.PropertyNameException;
 import java.util.Map;
 
 /**
- * @author Ashish Gaikwad Created on 19/Apr/2021
- * <p>
- * Will handle call from fornd end
+ * @author Ashish Gaikwad
  */
 @ReactModule(name = CooeeReactNativeModule.NAME)
 public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
+
     public static final String NAME = "CooeeReactNative";
     CooeeSDK cooeeSDK;
 
@@ -36,15 +35,6 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
     public String getName() {
         return NAME;
     }
-
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
-    @ReactMethod
-    public void multiply(int a, int b, Promise promise) {
-        promise.resolve(a * b);
-    }
-
-    public static native int nativeMultiply(int a, int b);
 
     /**
      * Send event using Cooee sendEvent Method
@@ -112,6 +102,5 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
     public void updateScreenName(String screenName) {
         cooeeSDK.setCurrentScreen(screenName);
         Log.i(CooeeSDKConstants.LOG_PREFIX, "updateScreenName: Screen Name Set");
-
     }
 }
