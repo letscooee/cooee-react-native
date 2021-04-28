@@ -1,6 +1,6 @@
 {
   "name": "cooee-react-native",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cooee's React Native Plugin for hyper-personalised Mobile App Re-Engagement via Machine Learning",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -36,13 +36,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/ashishwizpand/cooee-react-native",
-  "author": "Ashish Gaikwad <ashish@wizpanda.com> (https://github.com/ashishwizpand)",
+  "repository": "https://github.com/letscooee/cooee-react-native",
+  "author": "Ashish Gaikwad <ashish@wizpanda.com> (https://github.com/letscooee/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ashishwizpand/cooee-react-native/issues"
+    "url": "https://github.com/letscooee/cooee-react-native/ssues"
   },
-  "homepage": "https://github.com/ashishwizpand/cooee-react-native#readme",
+  "homepage": "https://github.com/letscooee/cooee-react-native#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

@@ -31,10 +31,10 @@ tools:replace="android:name"
 Open your `MainApplication` class present at `android/app/src/main/java/<yourpackage_name>/` and extend it with `Controller` class
 
 ```java
-import com.cooeereactnative.Controller;
+import com.letscooee.CooeePlugin;
 ...
 
-public class MainApplication extends Controller implements ReactApplication {
+public class MainApplication extends CooeePlugin implements ReactApplication {
 ...
 }
 ```

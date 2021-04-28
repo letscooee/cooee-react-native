@@ -8,7 +8,9 @@ export default function App() {
 
   const onPress = () => {
 
-    CooeeReactNative.updateUserData({ "name": "Ashish React", "email": "Ashish@react.com", "mobile": "1234567890" });
+    CooeeReactNative.updateScreenName("HomrActivity");
+    // CooeeReactNative.getUUID().then(setResult);
+    CooeeReactNative.updateUserData({ "name": "Ashish React Test App", "email": "Ashish@react.test", "mobile": "1234567890" });
     CooeeReactNative.sendEvent("Add To Cart", {});
 
   };
