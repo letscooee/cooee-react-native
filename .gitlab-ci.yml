@@ -2,14 +2,13 @@ image: node:latest
 
 before_script:
     - cat $NPM_CREDENTIAL > ~/.npmrc
-    - cat ~/.npmrc
 
 stages:
-  - deploy
+    - deploy
 
-deploy:
-  stage: deploy
-  script:
-    - npm publish
-  only:
-    - tags
+Release on NPM:
+    stage: deploy
+    script:
+        - npm publish
+    only:
+        - tags
