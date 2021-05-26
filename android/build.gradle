@@ -57,11 +57,11 @@ repositories {
   }
   google()
   jcenter()
-  maven { url "https://dl.bintray.com/wizpanda/maven" }
+  maven { url "https://letscooee.jfrog.io/artifactory/default-maven-local" }
 }
 
 dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"  // From node_modules
-  implementation 'com.letscooee:cooee-android-sdk:0.2.7'
+  implementation 'com.letscooee:cooee-android-sdk:0.2.11'
 }
