@@ -76,6 +76,18 @@ CooeeReactNative.updateUserData({ "name": "USER_NAME", "email": "USER_EMAIL", "m
 CooeeReactNative.sendEvent("EVENT_NAME", {"foo":"bar"});
 ```
 
+We also send data back to app when user perform any action with trigger. Tah data is in `Map<String, Object>` format.
+
+To listen Teigger action add the flowing code block in your code:
+```js
+import { NativeEventEmitter, NativeModules } from 'react-native';
+
+const eventEmitter = new NativeEventEmitter(NativeModules.ToastExample);
+var eventListener = eventEmitter.addListener('onInAppButtonClick', (event) => {
+
+    console.log(event) // "event will contain data in Map<String,Object> format"
+});
+```
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.

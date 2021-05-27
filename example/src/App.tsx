@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
 import CooeeReactNative from 'cooee-react-native';
+import { NativeEventEmitter, NativeModules } from 'react-native';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -14,12 +15,17 @@ export default function App() {
     CooeeReactNative.sendEvent("Add To Cart", {});
 
   };
+  
 
   React.useEffect(() => {
     CooeeReactNative.updateScreenName("HomrActivity");
     CooeeReactNative.getUUID().then(setResult);
     CooeeReactNative.updateUserData({ "name": "Ashish React", "email": "Ashish@react.com", "mobile": "1234567890" });
     CooeeReactNative.sendEvent("Add To Cart", {});
+    const eventEmitter = new NativeEventEmitter(NativeModules.ToastExample);
+    var eventListener = eventEmitter.addListener('onInAppButtonClick', (event) => {
+        console.log(event) // "someValue"
+    });
 
   }, []);
 

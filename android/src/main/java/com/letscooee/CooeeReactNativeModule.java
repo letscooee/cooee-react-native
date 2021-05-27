@@ -3,17 +3,24 @@ package com.letscooee;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.module.annotations.ReactModule;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.google.gson.Gson;
 import com.letscooee.utils.CooeeSDKConstants;
+import com.letscooee.utils.InAppNotificationClickListener;
 import com.letscooee.utils.PropertyNameException;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -24,10 +31,14 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
 
     public static final String NAME = "CooeeReactNative";
     CooeeSDK cooeeSDK;
+    private ReactApplicationContext reactContext;
 
     public CooeeReactNativeModule(ReactApplicationContext reactContext) {
         super(reactContext);
+
+        this.reactContext = reactContext;
         cooeeSDK = CooeeSDK.getDefaultInstance(reactContext.getBaseContext());
+        cooeeSDK.setInAppNotificationButtonListener(listener);
     }
 
     @Override
@@ -103,4 +114,16 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
         cooeeSDK.setCurrentScreen(screenName);
         Log.i(CooeeSDKConstants.LOG_PREFIX, "updateScreenName: Screen Name Set");
     }
+
+    private void sendInAppClicked(ReactContext reactContext, String eventName, @Nullable WritableMap payload) {
+        reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, payload);
+    }
+
+    private InAppNotificationClickListener listener = new InAppNotificationClickListener() {
+        @Override
+        public void onInAppButtonClick(HashMap<String, Object> payload) {
+            WritableMap writableMap = Arguments.makeNativeMap(payload);
+            sendInAppClicked(reactContext, "onInAppButtonClick", writableMap);
+        }
+    };
 }
