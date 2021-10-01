@@ -16,8 +16,8 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.module.annotations.ReactModule;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.google.gson.Gson;
-import com.letscooee.utils.CooeeSDKConstants;
-import com.letscooee.utils.InAppNotificationClickListener;
+import com.letscooee.utils.Constants;
+import com.letscooee.utils.CooeeCTAListener;
 import com.letscooee.utils.PropertyNameException;
 
 import java.util.HashMap;
@@ -38,7 +38,7 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
 
         this.reactContext = reactContext;
         cooeeSDK = CooeeSDK.getDefaultInstance(reactContext.getBaseContext());
-        cooeeSDK.setInAppNotificationButtonListener(listener);
+        cooeeSDK.setCTAListener(listener);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
             Map map = new Gson().fromJson(event.toString(), Map.class);
             cooeeSDK.sendEvent(name, ((Map) map.get("NativeMap")));
         } catch (PropertyNameException e) {
-            Log.e(CooeeSDKConstants.LOG_PREFIX, "sendEvent: " + e.getMessage(), e);
+            Log.e(Constants.TAG, "sendEvent: " + e.getMessage(), e);
         }
     }
 
@@ -81,11 +81,11 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void sendUserProperty(ReadableMap userProperties) {
         try {
-            Log.i(CooeeSDKConstants.LOG_PREFIX, "sendUserProperty: " + userProperties.toString());
+            Log.i(Constants.TAG, "sendUserProperty: " + userProperties.toString());
             Map map = new Gson().fromJson(userProperties.toString(), Map.class);
             cooeeSDK.updateUserProperties(map);
         } catch (PropertyNameException e) {
-            Log.e(CooeeSDKConstants.LOG_PREFIX, "sendUserProperty: " + e.getMessage(), e);
+            Log.e(Constants.TAG, "sendUserProperty: " + e.getMessage(), e);
         }
     }
 
@@ -100,7 +100,7 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
             Map map = new Gson().fromJson(userData.toString(), Map.class);
             cooeeSDK.updateUserData(((Map) map.get("NativeMap")));
         } catch (PropertyNameException e) {
-            Log.e(CooeeSDKConstants.LOG_PREFIX, "updateUserData: " + e.getMessage(), e);
+            Log.e(Constants.TAG, "updateUserData: " + e.getMessage(), e);
         }
     }
 
@@ -112,18 +112,18 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void updateScreenName(String screenName) {
         cooeeSDK.setCurrentScreen(screenName);
-        Log.i(CooeeSDKConstants.LOG_PREFIX, "updateScreenName: Screen Name Set");
+        Log.i(Constants.TAG, "updateScreenName: Screen Name Set");
     }
 
     private void sendInAppClicked(ReactContext reactContext, String eventName, @Nullable WritableMap payload) {
         reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, payload);
     }
 
-    private InAppNotificationClickListener listener = new InAppNotificationClickListener() {
+    private CooeeCTAListener listener = new CooeeCTAListener() {
         @Override
-        public void onInAppButtonClick(HashMap<String, Object> payload) {
+        public void onResponse(HashMap<String, Object> payload) {
             WritableMap writableMap = Arguments.makeNativeMap(payload);
-            sendInAppClicked(reactContext, "onInAppButtonClick", writableMap);
+            sendInAppClicked(reactContext, "onCooeeCTAListener", writableMap);
         }
     };
 }

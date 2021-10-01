@@ -2,7 +2,7 @@ package com.letscooee;
 
 import android.app.Application;
 
-import com.letscooee.init.ActivityLifecycleCallback;
+import com.letscooee.init.CooeeBootstrap;
 
 /**
  * Will handle application state.
@@ -16,6 +16,6 @@ public class CooeePlugin extends Application {
 
     public void onCreate() {
         super.onCreate();
-        new ActivityLifecycleCallback().register(this);
+         new CooeeBootstrap(this).init();
     }
 }
