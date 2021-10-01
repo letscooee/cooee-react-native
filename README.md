@@ -83,7 +83,7 @@ To listen Teigger action add the flowing code block in your code:
 import { NativeEventEmitter, NativeModules } from 'react-native';
 
 const eventEmitter = new NativeEventEmitter(NativeModules.ToastExample);
-var eventListener = eventEmitter.addListener('onInAppButtonClick', (event) => {
+var eventListener = eventEmitter.addListener('onCooeeCTAListener', (event) => {
 
     console.log(event) // "event will contain data in Map<String,Object> format"
 });
