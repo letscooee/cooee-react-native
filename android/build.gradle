@@ -1,67 +1,62 @@
 buildscript {
-  if (project == rootProject) {
-    repositories {
-      google()
-      jcenter()
-    }
+    if (project == rootProject) {
+        repositories {
+            google()
+            mavenCentral()
+            jcenter()
+        }
 
-    dependencies {
-      classpath 'com.android.tools.build:gradle:3.5.3'
-      classpath 'com.google.gms:google-services:4.3.5'
+        dependencies {
+            classpath 'com.android.tools.build:gradle:7.1.3'
+            classpath 'com.google.gms:google-services:4.3.4'
+        }
     }
-  }
 }
 
 apply plugin: 'com.android.library'
 
 
 def safeExtGet(prop, fallback) {
-  rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
 }
 
 android {
-  compileSdkVersion safeExtGet('CooeeReactNative_compileSdkVersion', 30)
-  buildToolsVersion safeExtGet('CooeeReactNative_buildToolsVersion', '29.0.2')
-  defaultConfig {
-    minSdkVersion safeExtGet('CooeeReactNative_minSdkVersion', 21)
-    targetSdkVersion safeExtGet('CooeeReactNative_targetSdkVersion', 30)
-    versionCode 1
-    versionName "1.0"
-    javaCompileOptions {
-      annotationProcessorOptions {
-        includeCompileClasspath true
-      }
+    compileSdkVersion safeExtGet('ReactNativePlugin_compileSdkVersion', 31)
+    defaultConfig {
+        minSdkVersion safeExtGet('ReactNativePlugin_minSdkVersion', 21)
+        targetSdkVersion safeExtGet('ReactNativePlugin_targetSdkVersion', 31)
+        versionCode 1
+        versionName "1.0"
     }
 
-  }
-
-  buildTypes {
-    release {
-      minifyEnabled false
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
     }
-  }
-  lintOptions {
-    disable 'GradleCompatible'
-  }
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
+    lintOptions {
+        disable 'GradleCompatible'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 repositories {
-  mavenLocal()
-  maven {
-    // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-    url("$rootDir/../node_modules/react-native/android")
-  }
-  google()
-  jcenter()
-  maven { url "https://letscooee.jfrog.io/artifactory/default-maven-local" }
+    mavenLocal()
+    maven {
+        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+        url("$rootDir/../node_modules/react-native/android")
+    }
+    google()
+    mavenCentral()
+    jcenter()
+    maven { url "https://letscooee.jfrog.io/artifactory/default-maven-local" }
 }
 
 dependencies {
-  //noinspection GradleDynamicVersion
-  implementation "com.facebook.react:react-native:+"  // From node_modules
-  implementation 'com.letscooee:cooee-android-sdk:0.2.11'
+    //noinspection GradleDynamicVersion
+    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation 'com.letscooee:cooee-android-sdk:1.3.10'
 }
