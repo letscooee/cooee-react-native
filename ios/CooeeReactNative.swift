@@ -44,13 +44,13 @@ public class CooeeReactNative: RCTEventEmitter {
     }
 
     @objc(sendEvent:withData:withResolver:withRejecter:)
-    func sendEvent(eventName: String, data: [String: Any]?, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
+    func sendEvent(eventName: String, eventProperties: [String: Any]?, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         do {
-            if data == nil {
+            if eventProperties == nil || eventProperties!.isEmpty {
                 try cooeeSDK.sendEvent(eventName: eventName)
                 resolve("Event sent successfully")
             } else {
-                try cooeeSDK.sendEvent(eventName: eventName, eventProperties: data)
+                try cooeeSDK.sendEvent(eventName: eventName, eventProperties: eventProperties)
             }
         } catch {
             reject("Event", "Fail to send event", error)
@@ -58,9 +58,9 @@ public class CooeeReactNative: RCTEventEmitter {
     }
 
     @objc(updateUserProfile:withResolver:withRejecter:)
-    func updateUserProfile(data: [String: Any], resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
+    func updateUserProfile(userProfile: [String: Any], resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         do {
-            try cooeeSDK.updateUserProfile(data)
+            try cooeeSDK.updateUserProfile(userProfile)
             resolve("User profile updated successfully")
         } catch {
             reject("UserProfile", "Fail to update Profile", error)

@@ -7,11 +7,11 @@ RCT_EXTERN_METHOD(getUserID:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(sendEvent:(NSString)eventName
-                 withData:(NSDictionary)data
+                 withData:(NSDictionary)eventProperties
                  withResolver:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(updateUserProfile:(NSDictionary)data
+RCT_EXTERN_METHOD(updateUserProfile:(NSDictionary)userProfile
                  withResolver:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 
