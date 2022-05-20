@@ -54,7 +54,7 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  
+
   UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
           center.delegate = self;
           [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error) {
@@ -68,15 +68,15 @@ static void InitializeFlipper(UIApplication *application) {
                   NSLog( @"ERROR: %@ - %@", error.localizedFailureReason, error.localizedDescription );
               }
           }];
-  
+
   return YES;
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
-//#if DEBUG
-//  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-//#else
+/*#if DEBUG
+  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+#else*/
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 //#endif
 }
