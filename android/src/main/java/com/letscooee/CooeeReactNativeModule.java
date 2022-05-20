@@ -50,17 +50,16 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
     /**
      * Send event using Cooee sendEvent Method
      *
-     * @param event will be ReadableMap
+     * @param eventProperties will be ReadableMap
      * @param name  will be event name
      */
     @ReactMethod
-    public void sendEvent(String name, ReadableMap event, Promise promise) {
+    public void sendEvent(String name, ReadableMap eventProperties, Promise promise) {
         try {
-            if (event == null) {
+            if (eventProperties == null || eventProperties.toHashMap().isEmpty()) {
                 cooeeSDK.sendEvent(name);
             } else {
-                Map map = new Gson().fromJson(event.toString(), Map.class);
-                cooeeSDK.sendEvent(name, ((Map) map.get("NativeMap")));
+                cooeeSDK.sendEvent(name, eventProperties.toHashMap());
             }
 
             promise.resolve("Event sent successfully");
@@ -92,8 +91,7 @@ public class CooeeReactNativeModule extends ReactContextBaseJavaModule {
                 promise.reject(new NullPointerException("userProfile is null"));
                 return;
             }
-            Map map = new Gson().fromJson(userProfile.toString(), Map.class);
-            cooeeSDK.updateUserProfile((Map<String, Object>) map.get("NativeMap"));
+            cooeeSDK.updateUserProfile(userProfile.toHashMap());
 
             promise.resolve("User profile updated successfully");
         } catch (PropertyNameException | NullPointerException e) {
