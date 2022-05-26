@@ -10,6 +10,8 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import "CooeeSDK/CooeeSDK-Swift.h"
+#import <UserNotifications/UserNotifications.h>
 
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
@@ -29,6 +31,9 @@ static void InitializeFlipper(UIApplication *application) {
 }
 #endif
 
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
+@end
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -36,6 +41,7 @@ static void InitializeFlipper(UIApplication *application) {
   #ifdef FB_SONARKIT_ENABLED
     InitializeFlipper(application);
   #endif
+  [AppController configure];
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"CooeeReactNativeExample"
@@ -48,16 +54,52 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+
+  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+          center.delegate = self;
+          [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+              if( !error ) {
+                  // Once permission granted register for remote notification
+                  dispatch_async(dispatch_get_main_queue(), ^{
+                      [[UIApplication sharedApplication] registerForRemoteNotifications];
+                  });
+              } else {
+                  // Handle error thrown by permission request
+                  NSLog( @"ERROR: %@ - %@", error.localizedFailureReason, error.localizedDescription );
+              }
+          }];
+
   return YES;
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
-#if DEBUG
+/*#if DEBUG
   return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-#else
+#else*/
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-#endif
+//#endif
 }
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+    {
+        // Send device token to the Cooee
+        [[CooeeSDK getInstance] setDeviceTokenWithToken:deviceToken];
+    }
+
+    - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
+    {
+        // Cooee can show only In-App while app is in foreground. Here Cooee will check for there notification and
+        // decide what action should be taken on foreground notification. If Push notification do not belong to
+        // Cooee then default [.badge,.alert,.sound] is return
+        completionHandler([[CooeeSDK getInstance] presentNotification:notification]);
+    }
+
+    - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler
+    {
+        // Cooee will perform click action associated with Push Notification
+        [[CooeeSDK getInstance] notificationAction:response];
+        completionHandler();
+    }
 
 @end

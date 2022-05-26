@@ -1,21 +1,23 @@
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
 
-@interface RCT_EXTERN_MODULE(CooeeReactNative, NSObject)
+@interface RCT_EXTERN_MODULE(CooeeReactNative, RCTEventEmitter)
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
-
-RCT_EXTERN_METHOD(getUUID:(RCTPromiseResolveBlock)resolve
+RCT_EXTERN_METHOD(getUserID:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(sendEvent:(NSString)eventName
-                 withData:(NSDictionary)data)
+                 withData:(NSDictionary)eventProperties
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(sendUserProperty:(NSDictionary)data)
+RCT_EXTERN_METHOD(updateUserProfile:(NSDictionary)userProfile
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(updateUserData:(NSDictionary)data)
+RCT_EXTERN_METHOD(updateScreenName:(NSString)screenName)
 
-RCT_EXTERN_METHOD(updateScreenName:(NSString)data)
+RCT_EXTERN_METHOD(showDebugInfo:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
 
 @end
