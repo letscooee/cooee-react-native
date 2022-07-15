@@ -22,6 +22,6 @@ public class NotificationReceiver extends BroadcastReceiver {
         RemoteMessage remoteMessage = new RemoteMessage(intent.getExtras());
         Log.d(Constants.TAG, "Notification received");
         CooeeFirebaseMessagingService.setMessageDelivered();
-        new CooeeFirebaseMessagingService(context).handleTriggerData(remoteMessage.getData().get("triggerData"));
+        new CooeeFirebaseMessagingService(context).handleRemoteMessage(remoteMessage);
     }
 }
