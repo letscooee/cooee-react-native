@@ -17,11 +17,14 @@ import com.letscooee.utils.Constants;
  */
 public class NotificationReceiver extends BroadcastReceiver {
 
+    public NotificationReceiver() {
+        CooeeFirebaseMessagingService.setMessageDelivered();
+    }
+
     @Override
     public void onReceive(Context context, Intent intent) {
         RemoteMessage remoteMessage = new RemoteMessage(intent.getExtras());
         Log.d(Constants.TAG, "Notification received");
-        CooeeFirebaseMessagingService.setMessageDelivered();
         new CooeeFirebaseMessagingService(context).handleRemoteMessage(remoteMessage);
     }
 }
