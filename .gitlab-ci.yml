@@ -1,6 +1,11 @@
 image: node:lts
 
+cache:
+    paths:
+        - node_modules/
+
 before_script:
+    - npm install
     - cat $NPM_CREDENTIAL > ~/.npmrc
 
 stages:
