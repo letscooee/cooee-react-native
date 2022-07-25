@@ -10,7 +10,7 @@ Release on NPM:
     stage: deploy
     environment:
         name: production
-        script:
-            - npm publish --access public
-        only:
-            - tags
+    script:
+        - npm publish --access public
+    only:
+        - tags
