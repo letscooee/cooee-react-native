@@ -1,27 +1,35 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+require_relative '../node_modules/@letscooee/react-native/scripts/cooee_static_pod'
 
 platform :ios, '13.0'
 
 use_frameworks!
-#use_modular_headers!
 target 'CooeeReactNativeExample' do
-  #use_frameworks! :linkage => :static
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  #pod 'Sentry', '7.15.0' #:modular_headers => true
   pod 'cooee-react-native', :path => '../..'
-  
+
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable these next few lines.
-#  use_flipper!({ 'Flipper' => '0.95.0' })
-#  post_install do |installer|
-#    flipper_post_install(installer)
-#  end
+  use_flipper!({ 'Flipper' => '0.155.0' })
+
+  # Setup Cooee Plugin to run with Flipper.
+  # If Flipper is not used then its not required.
+  pre_install do |installer|
+    setup_cooee(installer)
+  end
+
+
+
+  post_install do |installer|
+    flipper_post_install(installer)
+  end
+
   target 'NotifySerice' do
     inherit! :search_paths
   end

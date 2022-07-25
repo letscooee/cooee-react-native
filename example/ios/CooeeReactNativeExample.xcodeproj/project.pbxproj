@@ -15,12 +15,12 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* CooeeReactNativeExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CooeeReactNativeExampleTests.m */; };
-		75AD4A9E2834E6B300DC1A60 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 75AD4A9D2834E6B300DC1A60 /* NotificationService.m */; };
-		75AD4AA22834E6B300DC1A60 /* NotifySerice.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 75AD4A9A2834E6B300DC1A60 /* NotifySerice.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7586A16B2889914E005F63C3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586A16A2889914E005F63C3 /* File.swift */; };
+		75F57B5B2889703F00764047 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F57B5A2889703F00764047 /* NotificationService.swift */; };
+		75F57B5F2889703F00764047 /* NotifySerice.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 75F57B582889703F00764047 /* NotifySerice.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		91CF855C262EB5D500ED799A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF855B262EB5D500ED799A /* File.swift */; };
-		AFD593A7A6BAA0689C4461CD /* Pods_CooeeReactNativeExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28188F91C9EC3B33C40C2D63 /* Pods_CooeeReactNativeExample.framework */; };
-		BBDDA475E9F60A9B97E5127A /* Pods_NotifySerice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5765DD57BFFB26870C12BF6D /* Pods_NotifySerice.framework */; };
+		B0A7C78D4D1034EAE757BDCD /* Pods_NotifySerice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BF2EEE3624A5EC19AF75FF /* Pods_NotifySerice.framework */; };
+		B4417814611CBA02B6DF4BB0 /* Pods_CooeeReactNativeExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B74452A8151184B8F21A15E /* Pods_CooeeReactNativeExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +38,11 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "CooeeReactNativeExample-tvOS";
 		};
-		75AD4AA02834E6B300DC1A60 /* PBXContainerItemProxy */ = {
+		75F57B5D2889703F00764047 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 75AD4A992834E6B300DC1A60;
+			remoteGlobalIDString = 75F57B572889703F00764047;
 			remoteInfo = NotifySerice;
 		};
 /* End PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				75AD4AA22834E6B300DC1A60 /* NotifySerice.appex in Embed App Extensions */,
+				75F57B5F2889703F00764047 /* NotifySerice.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,28 +66,29 @@
 		00E356EE1AD99517003FC87E /* CooeeReactNativeExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CooeeReactNativeExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* CooeeReactNativeExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CooeeReactNativeExampleTests.m; sourceTree = "<group>"; };
+		09BF2EEE3624A5EC19AF75FF /* Pods_NotifySerice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotifySerice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* CooeeReactNativeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CooeeReactNativeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CooeeReactNativeExample/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = CooeeReactNativeExample/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CooeeReactNativeExample/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CooeeReactNativeExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CooeeReactNativeExample/main.m; sourceTree = "<group>"; };
-		28188F91C9EC3B33C40C2D63 /* Pods_CooeeReactNativeExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CooeeReactNativeExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* CooeeReactNativeExample-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CooeeReactNativeExample-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* CooeeReactNativeExample-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CooeeReactNativeExample-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30AAD9A4777847D33C17ED74 /* Pods-NotifySerice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotifySerice.release.xcconfig"; path = "Target Support Files/Pods-NotifySerice/Pods-NotifySerice.release.xcconfig"; sourceTree = "<group>"; };
-		5765DD57BFFB26870C12BF6D /* Pods_NotifySerice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotifySerice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7509EE0B2833AC0200B7415F /* CooeeReactNativeExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CooeeReactNativeExample.entitlements; path = CooeeReactNativeExample/CooeeReactNativeExample.entitlements; sourceTree = "<group>"; };
-		75AD4A9A2834E6B300DC1A60 /* NotifySerice.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotifySerice.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		75AD4A9C2834E6B300DC1A60 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
-		75AD4A9D2834E6B300DC1A60 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
-		75AD4A9F2834E6B300DC1A60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75AD4AA72834EDCC00DC1A60 /* NotifySerice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotifySerice.entitlements; sourceTree = "<group>"; };
+		7586A16A2889914E005F63C3 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		75F57B582889703F00764047 /* NotifySerice.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotifySerice.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		75F57B5A2889703F00764047 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		75F57B5C2889703F00764047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75F57B632889705200764047 /* NotifySerice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotifySerice.entitlements; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CooeeReactNativeExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91CF855A262EB5D500ED799A /* CooeeReactNativeExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CooeeReactNativeExample-Bridging-Header.h"; sourceTree = "<group>"; };
-		91CF855B262EB5D500ED799A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		9B74452A8151184B8F21A15E /* Pods_CooeeReactNativeExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CooeeReactNativeExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD76DD592F92A539EF642F95 /* Pods-CooeeReactNativeExample-NotifySerice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CooeeReactNativeExample-NotifySerice.debug.xcconfig"; path = "Target Support Files/Pods-CooeeReactNativeExample-NotifySerice/Pods-CooeeReactNativeExample-NotifySerice.debug.xcconfig"; sourceTree = "<group>"; };
 		BB4E465ACA019CF375B89F8F /* Pods-CooeeReactNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CooeeReactNativeExample.release.xcconfig"; path = "Target Support Files/Pods-CooeeReactNativeExample/Pods-CooeeReactNativeExample.release.xcconfig"; sourceTree = "<group>"; };
 		CF1AD74A0734958BE0AF7F2C /* Pods-NotifySerice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotifySerice.debug.xcconfig"; path = "Target Support Files/Pods-NotifySerice/Pods-NotifySerice.debug.xcconfig"; sourceTree = "<group>"; };
+		E52B5FC63666EDA8D8E9891A /* Pods-CooeeReactNativeExample-NotifySerice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CooeeReactNativeExample-NotifySerice.release.xcconfig"; path = "Target Support Files/Pods-CooeeReactNativeExample-NotifySerice/Pods-CooeeReactNativeExample-NotifySerice.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F96D01CCBD2C218294397D3C /* Pods-CooeeReactNativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CooeeReactNativeExample.debug.xcconfig"; path = "Target Support Files/Pods-CooeeReactNativeExample/Pods-CooeeReactNativeExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFD593A7A6BAA0689C4461CD /* Pods_CooeeReactNativeExample.framework in Frameworks */,
+				B4417814611CBA02B6DF4BB0 /* Pods_CooeeReactNativeExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,11 +124,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75AD4A972834E6B300DC1A60 /* Frameworks */ = {
+		75F57B552889703F00764047 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBDDA475E9F60A9B97E5127A /* Pods_NotifySerice.framework in Frameworks */,
+				B0A7C78D4D1034EAE757BDCD /* Pods_NotifySerice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +163,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				7586A16A2889914E005F63C3 /* File.swift */,
 			);
 			name = CooeeReactNativeExample;
 			sourceTree = "<group>";
@@ -171,8 +173,8 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				28188F91C9EC3B33C40C2D63 /* Pods_CooeeReactNativeExample.framework */,
-				5765DD57BFFB26870C12BF6D /* Pods_NotifySerice.framework */,
+				9B74452A8151184B8F21A15E /* Pods_CooeeReactNativeExample.framework */,
+				09BF2EEE3624A5EC19AF75FF /* Pods_NotifySerice.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,17 +186,18 @@
 				BB4E465ACA019CF375B89F8F /* Pods-CooeeReactNativeExample.release.xcconfig */,
 				CF1AD74A0734958BE0AF7F2C /* Pods-NotifySerice.debug.xcconfig */,
 				30AAD9A4777847D33C17ED74 /* Pods-NotifySerice.release.xcconfig */,
+				AD76DD592F92A539EF642F95 /* Pods-CooeeReactNativeExample-NotifySerice.debug.xcconfig */,
+				E52B5FC63666EDA8D8E9891A /* Pods-CooeeReactNativeExample-NotifySerice.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		75AD4A9B2834E6B300DC1A60 /* NotifySerice */ = {
+		75F57B592889703F00764047 /* NotifySerice */ = {
 			isa = PBXGroup;
 			children = (
-				75AD4AA72834EDCC00DC1A60 /* NotifySerice.entitlements */,
-				75AD4A9C2834E6B300DC1A60 /* NotificationService.h */,
-				75AD4A9D2834E6B300DC1A60 /* NotificationService.m */,
-				75AD4A9F2834E6B300DC1A60 /* Info.plist */,
+				75F57B632889705200764047 /* NotifySerice.entitlements */,
+				75F57B5A2889703F00764047 /* NotificationService.swift */,
+				75F57B5C2889703F00764047 /* Info.plist */,
 			);
 			path = NotifySerice;
 			sourceTree = "<group>";
@@ -209,11 +212,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				91CF855B262EB5D500ED799A /* File.swift */,
 				13B07FAE1A68108700A75B9A /* CooeeReactNativeExample */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CooeeReactNativeExampleTests */,
-				75AD4A9B2834E6B300DC1A60 /* NotifySerice */,
+				75F57B592889703F00764047 /* NotifySerice */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				6B9684456A2045ADE5A6E47E /* Pods */,
@@ -231,7 +233,7 @@
 				00E356EE1AD99517003FC87E /* CooeeReactNativeExampleTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* CooeeReactNativeExample-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* CooeeReactNativeExample-tvOSTests.xctest */,
-				75AD4A9A2834E6B300DC1A60 /* NotifySerice.appex */,
+				75F57B582889703F00764047 /* NotifySerice.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,11 +271,12 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				4BAB602C25A68703094E8A96 /* [CP] Embed Pods Frameworks */,
 				75AD4AA32834E6B300DC1A60 /* Embed App Extensions */,
+				11B0E67AA4C61F77558A3AFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				75AD4AA12834E6B300DC1A60 /* PBXTargetDependency */,
+				75F57B5E2889703F00764047 /* PBXTargetDependency */,
 			);
 			name = CooeeReactNativeExample;
 			productName = CooeeReactNativeExample;
@@ -317,14 +320,14 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* CooeeReactNativeExample-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		75AD4A992834E6B300DC1A60 /* NotifySerice */ = {
+		75F57B572889703F00764047 /* NotifySerice */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75AD4AA62834E6B300DC1A60 /* Build configuration list for PBXNativeTarget "NotifySerice" */;
+			buildConfigurationList = 75F57B602889703F00764047 /* Build configuration list for PBXNativeTarget "NotifySerice" */;
 			buildPhases = (
-				CF04A6EFBF0744B63C8826AC /* [CP] Check Pods Manifest.lock */,
-				75AD4A962834E6B300DC1A60 /* Sources */,
-				75AD4A972834E6B300DC1A60 /* Frameworks */,
-				75AD4A982834E6B300DC1A60 /* Resources */,
+				B8595BF4CBCE8CB1713C51EC /* [CP] Check Pods Manifest.lock */,
+				75F57B542889703F00764047 /* Sources */,
+				75F57B552889703F00764047 /* Frameworks */,
+				75F57B562889703F00764047 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -332,7 +335,7 @@
 			);
 			name = NotifySerice;
 			productName = NotifySerice;
-			productReference = 75AD4A9A2834E6B300DC1A60 /* NotifySerice.appex */;
+			productReference = 75F57B582889703F00764047 /* NotifySerice.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -341,6 +344,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -360,8 +364,8 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
-					75AD4A992834E6B300DC1A60 = {
-						CreatedOnToolsVersion = 13.3.1;
+					75F57B572889703F00764047 = {
+						CreatedOnToolsVersion = 13.4.1;
 						DevelopmentTeam = 26TM6S5QFS;
 						ProvisioningStyle = Automatic;
 					};
@@ -384,7 +388,7 @@
 				00E356ED1AD99517003FC87E /* CooeeReactNativeExampleTests */,
 				2D02E47A1E0B4A5D006451C7 /* CooeeReactNativeExample-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* CooeeReactNativeExample-tvOSTests */,
-				75AD4A992834E6B300DC1A60 /* NotifySerice */,
+				75F57B572889703F00764047 /* NotifySerice */,
 			);
 		};
 /* End PBXProject section */
@@ -421,7 +425,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75AD4A982834E6B300DC1A60 /* Resources */ = {
+		75F57B562889703F00764047 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -443,7 +447,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh index.tsx\n";
+		};
+		11B0E67AA4C61F77558A3AFC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CooeeReactNativeExample/Pods-CooeeReactNativeExample-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CooeeReactNativeExample/Pods-CooeeReactNativeExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -489,71 +511,27 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CooeeReactNativeExample/Pods-CooeeReactNativeExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CooeeSDK/CooeeSDK.framework",
-				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/RCT-Folly/folly.framework",
-				"${BUILT_PRODUCTS_DIR}/RCTTypeSafety/RCTTypeSafety.framework",
-				"${BUILT_PRODUCTS_DIR}/React-Codegen/React_Codegen.framework",
-				"${BUILT_PRODUCTS_DIR}/React-Core/React.framework",
-				"${BUILT_PRODUCTS_DIR}/React-CoreModules/CoreModules.framework",
-				"${BUILT_PRODUCTS_DIR}/React-RCTAnimation/RCTAnimation.framework",
-				"${BUILT_PRODUCTS_DIR}/React-RCTBlob/RCTBlob.framework",
-				"${BUILT_PRODUCTS_DIR}/React-RCTImage/RCTImage.framework",
-				"${BUILT_PRODUCTS_DIR}/React-RCTLinking/RCTLinking.framework",
-				"${BUILT_PRODUCTS_DIR}/React-RCTNetwork/RCTNetwork.framework",
-				"${BUILT_PRODUCTS_DIR}/React-RCTSettings/RCTSettings.framework",
-				"${BUILT_PRODUCTS_DIR}/React-RCTText/RCTText.framework",
-				"${BUILT_PRODUCTS_DIR}/React-RCTVibration/RCTVibration.framework",
-				"${BUILT_PRODUCTS_DIR}/React-cxxreact/cxxreact.framework",
-				"${BUILT_PRODUCTS_DIR}/React-jsi/jsi.framework",
-				"${BUILT_PRODUCTS_DIR}/React-jsiexecutor/jsireact.framework",
-				"${BUILT_PRODUCTS_DIR}/React-jsinspector/jsinspector.framework",
-				"${BUILT_PRODUCTS_DIR}/React-logger/logger.framework",
-				"${BUILT_PRODUCTS_DIR}/React-perflogger/reactperflogger.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactCommon/ReactCommon.framework",
 				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
-				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
-				"${BUILT_PRODUCTS_DIR}/cooee-react-native/cooee_react_native.framework",
-				"${BUILT_PRODUCTS_DIR}/fmt/fmt.framework",
-				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-DoubleConversion/double-conversion.framework/double-conversion",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-Glog/glog.framework/glog",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CooeeSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoubleConversion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/folly.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTTypeSafety.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React_Codegen.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreModules.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTAnimation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTBlob.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTLinking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTNetwork.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTSettings.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTText.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTVibration.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/cxxreact.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsi.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsireact.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsinspector.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/logger.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/reactperflogger.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactCommon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/cooee_react_native.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fmt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/double-conversion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CooeeReactNativeExample/Pods-CooeeReactNativeExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF04A6EFBF0744B63C8826AC /* [CP] Check Pods Manifest.lock */ = {
+		B8595BF4CBCE8CB1713C51EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -629,7 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				91CF855C262EB5D500ED799A /* File.swift in Sources */,
+				7586A16B2889914E005F63C3 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,11 +629,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75AD4A962834E6B300DC1A60 /* Sources */ = {
+		75F57B542889703F00764047 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75AD4A9E2834E6B300DC1A60 /* NotificationService.m in Sources */,
+				75F57B5B2889703F00764047 /* NotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,10 +650,10 @@
 			target = 2D02E47A1E0B4A5D006451C7 /* CooeeReactNativeExample-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
-		75AD4AA12834E6B300DC1A60 /* PBXTargetDependency */ = {
+		75F57B5E2889703F00764047 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 75AD4A992834E6B300DC1A60 /* NotifySerice */;
-			targetProxy = 75AD4AA02834E6B300DC1A60 /* PBXContainerItemProxy */;
+			target = 75F57B572889703F00764047 /* NotifySerice */;
+			targetProxy = 75F57B5D2889703F00764047 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -727,6 +705,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F96D01CCBD2C218294397D3C /* Pods-CooeeReactNativeExample.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CooeeReactNativeExample/CooeeReactNativeExample.entitlements;
@@ -735,11 +714,10 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CooeeReactNativeExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaAsyncSocket\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/CooeeSDK\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Flipper\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Flipper-Boost-iOSX\"",
@@ -777,7 +755,8 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/fmt\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/libevent\"",
-					/usr/lib/swift,
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CooeeSDK\"",
+					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -786,6 +765,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.letscooee.cooeereactnative;
 				PRODUCT_NAME = CooeeReactNativeExample;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "CooeeReactNativeExample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -798,6 +778,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB4E465ACA019CF375B89F8F /* Pods-CooeeReactNativeExample.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CooeeReactNativeExample/CooeeReactNativeExample.entitlements;
@@ -805,7 +786,42 @@
 				DEVELOPMENT_TEAM = 26TM6S5QFS;
 				INFOPLIST_FILE = CooeeReactNativeExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaAsyncSocket\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HandyJSON\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RCT-Folly\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RCTTypeSafety\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Codegen\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-CoreModules\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTAnimation\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTBlob\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTLinking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTNetwork\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTSettings\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTText\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTVibration\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsi\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsiexecutor\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-logger\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-perflogger\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Sentry\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YogaKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/cooee-react-native\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/fmt\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/libevent\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CooeeSDK\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -813,6 +829,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.letscooee.cooeereactnative;
 				PRODUCT_NAME = CooeeReactNativeExample;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "CooeeReactNativeExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -926,7 +943,7 @@
 			};
 			name = Release;
 		};
-		75AD4AA42834E6B300DC1A60 /* Debug */ = {
+		75F57B612889703F00764047 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF1AD74A0734958BE0AF7F2C /* Pods-NotifySerice.debug.xcconfig */;
 			buildSettings = {
@@ -947,7 +964,7 @@
 				INFOPLIST_FILE = NotifySerice/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotifySerice;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -955,12 +972,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.letscooee.cooeereactnative.NotifySerice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		75AD4AA52834E6B300DC1A60 /* Release */ = {
+		75F57B622889703F00764047 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30AAD9A4777847D33C17ED74 /* Pods-NotifySerice.release.xcconfig */;
 			buildSettings = {
@@ -982,7 +1002,7 @@
 				INFOPLIST_FILE = NotifySerice/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotifySerice;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
@@ -990,6 +1010,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1146,11 +1168,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75AD4AA62834E6B300DC1A60 /* Build configuration list for PBXNativeTarget "NotifySerice" */ = {
+		75F57B602889703F00764047 /* Build configuration list for PBXNativeTarget "NotifySerice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75AD4AA42834E6B300DC1A60 /* Debug */,
-				75AD4AA52834E6B300DC1A60 /* Release */,
+				75F57B612889703F00764047 /* Debug */,
+				75F57B622889703F00764047 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

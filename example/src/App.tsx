@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import {StyleSheet, View, Text, Alert, Button} from 'react-native';
-import CooeeReactNative from 'cooee-react-native';
+import CooeeReactNative from '@letscooee/react-native';
 import {NativeEventEmitter, NativeModules} from 'react-native';
 
 export default function App() {
