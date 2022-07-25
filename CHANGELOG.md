@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.3.3 (2022-07-25)
+
+### Improvement
+1. Add script to support Static libraries in iOS.
+
+### Fixes
+1. Add missing import in `CooeePlugin.swift`
+
 ## 1.3.2 (2022-07-15)
 
 ### Improvement

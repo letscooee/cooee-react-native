@@ -1,6 +1,6 @@
 {
     "name": "@letscooee/react-native",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "description": "Cooee's React Native Plugin for hyper-personalised Mobile App Re-Engagement via Machine Learning",
     "main": "lib/commonjs/index",
     "module": "lib/module/index",
