@@ -1,4 +1,5 @@
 import CooeeSDK
+import React
 
 @objc(CooeeReactNative)
 public class CooeeReactNative: RCTEventEmitter {
