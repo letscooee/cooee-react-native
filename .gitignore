@@ -62,3 +62,4 @@ lib/
 example/package-lock.json
 example/yarn.lock
 example/ios/Podfile.lock
+/example/android/java_pid11490.hprof
