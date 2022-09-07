@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75ABC69A28C77BA4009247CC /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 75ABC69928C77BA4009247CC /* Constants.m */; };
 		F4FF95D7245B92E800C19C63 /* CooeeReactNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* CooeeReactNative.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libCooeeReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCooeeReactNative.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		75ABC69628C76EEC009247CC /* CooeePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CooeePlugin.h; sourceTree = "<group>"; };
+		75ABC69728C76EED009247CC /* CooeePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CooeePlugin.m; sourceTree = "<group>"; };
+		75ABC69828C77A40009247CC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		75ABC69928C77BA4009247CC /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		91CF8558262EB2FB00ED799A /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/IOBluetooth.framework; sourceTree = DEVELOPER_DIR; };
 		B3E7B5891CC2AC0600A0062D /* CooeeReactNative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CooeeReactNative.m; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* CooeeReactNative-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CooeeReactNative-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -52,6 +57,10 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				75ABC69928C77BA4009247CC /* Constants.m */,
+				75ABC69828C77A40009247CC /* Constants.h */,
+				75ABC69628C76EEC009247CC /* CooeePlugin.h */,
+				75ABC69728C76EED009247CC /* CooeePlugin.m */,
 				F4FF95D6245B92E800C19C63 /* CooeeReactNative.swift */,
 				B3E7B5891CC2AC0600A0062D /* CooeeReactNative.m */,
 				F4FF95D5245B92E700C19C63 /* CooeeReactNative-Bridging-Header.h */,
@@ -126,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4FF95D7245B92E800C19C63 /* CooeeReactNative.swift in Sources */,
+				75ABC69A28C77BA4009247CC /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

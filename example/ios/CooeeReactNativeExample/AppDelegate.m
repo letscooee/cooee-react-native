@@ -10,7 +10,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import "CooeeSDK/CooeeSDK-Swift.h"
+#import "CooeePlugin.h"
 #import <UserNotifications/UserNotifications.h>
 
 #ifdef FB_SONARKIT_ENABLED
@@ -41,7 +41,8 @@ static void InitializeFlipper(UIApplication *application) {
   #ifdef FB_SONARKIT_ENABLED
     InitializeFlipper(application);
   #endif
-  [AppController configure];
+  //[AppController configure];
+  [CooeePlugin appLaunched];
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"CooeeReactNativeExample"
@@ -83,8 +84,11 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     {
-        // Send device token to the Cooee
-        [[CooeeSDK getInstance] setDeviceTokenWithToken:deviceToken];
+        // Send device token to the Cooeeprintlet tokenString = rawToken.reduce("") {
+//      $0 + String(format: "%02X", $1)
+//  }
+      NSLog(@"%@", deviceToken);
+        [CooeePlugin setDeviceTokenWithToken:deviceToken];
     }
 
     - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
@@ -92,13 +96,13 @@ static void InitializeFlipper(UIApplication *application) {
         // Cooee can show only In-App while app is in foreground. Here Cooee will check for there notification and
         // decide what action should be taken on foreground notification. If Push notification do not belong to
         // Cooee then default [.badge,.alert,.sound] is return
-        completionHandler([[CooeeSDK getInstance] presentNotification:notification]);
+        completionHandler([CooeePlugin presentNotification:notification]);
     }
 
     - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler
     {
         // Cooee will perform click action associated with Push Notification
-        [[CooeeSDK getInstance] notificationAction:response];
+        [CooeePlugin notificationAction:response];
         completionHandler();
     }
 

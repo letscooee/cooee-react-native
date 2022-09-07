@@ -17,7 +17,7 @@ class NotificationService: UNNotificationServiceExtension {
         self.contentHandler = contentHandler
 //        bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
       NSLog("********** Service started")
-      bestAttemptContent = CooeeNotificationService.updateContent((request.content.mutableCopy() as! UNMutableNotificationContent), with: request.content.userInfo)
+      bestAttemptContent = CooeeNotificationService.updateContentFromRequest(request)
 
         if let bestAttemptContent = bestAttemptContent {
             // Modify the notification content here...
