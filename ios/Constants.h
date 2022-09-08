@@ -7,6 +7,12 @@
 //
 #import <UIKit/UIKit.h>
 
+/**
+ * Constant class that holds Plugin constants.
+ *
+ * @author Ashish Gaikwad on 7/9/22
+ * @since 1.4.0
+ */
 @interface Constants : NSObject
 
 extern NSString *VERSION_NAME;
