@@ -31,7 +31,8 @@
         "pods": "cd example && pod-install --quiet",
         "bootstrap": "yarn example && yarn && yarn pods",
         "preversion": "git add CHANGELOG.md",
-        "postversion": "git push && git push --tags"
+        "version": "node ./bump-version.js && git add plugin.xml android/src/main/java/com/letscooee/utils/Constants.java ios/Constants.m",
+        "postversion": "git push --no-verify && git push --tags --no-verify"
     },
     "keywords": [
         "react-native",
