@@ -17,7 +17,7 @@
 @interface CooeePlugin : NSObject
 + (void)appLaunched;
 
-+ (void)setDeviceTokenWithToken:deviceToken;
++ (void)setDeviceToken:deviceToken;
 
 + (UNNotificationPresentationOptions)presentNotification:(UNNotification *_Nonnull)notification;
 

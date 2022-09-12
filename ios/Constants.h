@@ -3,7 +3,7 @@
 //  CooeeReactNative
 //
 //  Created by Ashish Gaikwad on 06/09/22.
-//  Copyright © 2022 Facebook. All rights reserved.
+//  Copyright © 2022 LetsCooee. All rights reserved.
 //
 #import <UIKit/UIKit.h>
 

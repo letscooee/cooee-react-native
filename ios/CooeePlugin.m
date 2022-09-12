@@ -27,7 +27,7 @@ static BOOL isAfterForeground = false;
  * Sends device to server
  * @param deviceToken deviceToken return by application(application:didRegisterForRemoteNotificationsWithDeviceToken:) method.
  */
-+ (void)setDeviceTokenWithToken:deviceToken {
++ (void)setDeviceToken:deviceToken {
     [[CooeeSDK getInstance] setDeviceTokenWithToken:deviceToken];
 }
 

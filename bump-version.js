@@ -9,8 +9,8 @@ console.log(`updating to [${version}]`);
 const newVersionCode = parseInt(version.split('.').map(v => v.padStart(2, '0')).join(''));
 
 /**************** Write New Version in Constant.java & Constant.swift ***************/
-bumpVersionInIOS(iOSVersionFilePath);
-bumpVersionInAndroid(androidVersionFilePath);
+bumpVersion(iOSVersionFilePath);
+bumpVersion(androidVersionFilePath);
 
 /**************** End Write New Version in pubspec.yaml ***************/
 
@@ -19,17 +19,13 @@ bumpVersionInAndroid(androidVersionFilePath);
  *
  * @param path {string} path of the file
  */
-function bumpVersionInAndroid(path) {
+function bumpVersion(path) {
     let cooeeMetaData = fs.readFileSync(path, "utf8");
-    cooeeMetaData = cooeeMetaData.replace(/VERSION_NAME = "[^"]+"/, `VERSION_NAME = "${version}"`);
-    cooeeMetaData = cooeeMetaData.replace(/VERSION_CODE = [^\n]+/, `VERSION_CODE = ${newVersionCode};`);
-    fs.writeFileSync(path, cooeeMetaData);
-}
-
-
-function bumpVersionInIOS(path) {
-    let cooeeMetaData = fs.readFileSync(path, "utf8");
-    cooeeMetaData = cooeeMetaData.replace(/VERSION_NAME = @"[^"]+"/, `VERSION_NAME = @"${version}";`);
-    cooeeMetaData = cooeeMetaData.replace(/VERSION_CODE = [^\n]+/, `VERSION_CODE = ${newVersionCode};`);
+    if (path.includes('android')) {
+        cooeeMetaData = cooeeMetaData.replace(/VERSION_NAME = "[^"]+"/, `VERSION_NAME = "${version}"`);
+    } else {
+        cooeeMetaData = cooeeMetaData.replace(/VERSION_NAME = @"[^"]+"/, `VERSION_NAME = @"${version}"`);
+    }
+    cooeeMetaData = cooeeMetaData.replace(/VERSION_CODE = [^;]+/, `VERSION_CODE = ${newVersionCode}`);
     fs.writeFileSync(path, cooeeMetaData);
 }
