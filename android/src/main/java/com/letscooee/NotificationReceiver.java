@@ -8,6 +8,8 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.letscooee.services.CooeeFirebaseMessagingService;
 import com.letscooee.utils.Constants;
 
+import java.util.concurrent.Executors;
+
 /**
  * Handle received push notification from firebase and set flag in {@link CooeeFirebaseMessagingService}
  * to prevent displaying same notification twice.
@@ -25,6 +27,9 @@ public class NotificationReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         RemoteMessage remoteMessage = new RemoteMessage(intent.getExtras());
         Log.d(Constants.TAG, "Notification received");
-        new CooeeFirebaseMessagingService(context).handleRemoteMessage(remoteMessage);
+
+        Executors.newSingleThreadExecutor().execute(() -> {
+            new CooeeFirebaseMessagingService(context).handleRemoteMessage(remoteMessage);
+        });
     }
 }

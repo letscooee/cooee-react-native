@@ -75,7 +75,8 @@ public class CooeeReactNative: RCTEventEmitter {
 
     @objc(showDebugInfo:withRejecter:)
     func showDebugInfo(resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-        reject("DebugInfo", "iOS do not have support yet", NSError(domain: "iOS do not have support yet", code: 0, userInfo: nil))
+        cooeeSDK.showDebugInfo()
+        resolve("Showing Debug Info")
     }
 }
 

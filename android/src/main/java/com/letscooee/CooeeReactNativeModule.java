@@ -1,10 +1,8 @@
 package com.letscooee;
 
 import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -15,13 +13,10 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.module.annotations.ReactModule;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
-import com.google.gson.Gson;
 import com.letscooee.utils.Constants;
 import com.letscooee.utils.CooeeCTAListener;
 import com.letscooee.utils.PropertyNameException;
-
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author Ashish Gaikwad
