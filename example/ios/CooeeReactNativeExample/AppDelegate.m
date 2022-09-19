@@ -86,7 +86,7 @@ static void InitializeFlipper(UIApplication *application) {
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
   NSLog(@"%@", deviceToken);
-  [CooeePlugin setDeviceTokenWithToken:deviceToken];
+  [CooeePlugin setDeviceToken:deviceToken];
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
