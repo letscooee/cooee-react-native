@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   s.dependency "React-Core"
-  s.dependency "CooeeSDK", "1.4.0"
+  s.dependency "CooeeSDK", "1.4.1"
 end
