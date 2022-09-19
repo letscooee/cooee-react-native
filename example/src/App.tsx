@@ -1,13 +1,15 @@
 import * as React from 'react';
 
-import {StyleSheet, View, Text, ImageBackground, TouchableOpacity} from 'react-native';
+import {ImageBackground, NativeEventEmitter, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import CooeeReactNative from '@letscooee/react-native';
-import {NativeEventEmitter} from 'react-native';
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {NavigationContainer} from "@react-navigation/native";
+import Profile from "./Profile";
 
+const Stack = createNativeStackNavigator();
 
-export default function App() {
+const HomeScreen = ({navigation}) => {
     const [result, setResult] = React.useState<number | undefined>();
-    //const banner = {uri: "banner.png"}
     const onPress = () => {
         console.log("UserId Pressed")
     };
@@ -15,8 +17,6 @@ export default function App() {
     const showInfo = () => {
         CooeeReactNative.showDebugInfo();
     };
-
-
     React.useEffect(() => {
         CooeeReactNative.updateScreenName("HomeActivity");
         CooeeReactNative.getUserID().then(setResult);
@@ -26,46 +26,48 @@ export default function App() {
             console.log("CTA CTA", event)
         });
 
-        CooeeReactNative.assLis
-
-        CooeeReactNative.updateUserProfile({
-            "name": "Ashish React",
-            "email": "Ashish@react.com",
-            "mobile": "1234567890",
-            "isLogin": true
-        }).then((resp: any) => console.log("Success: ", resp))
-            .catch((err: any) => console.error("Error:", err))
-
-
         CooeeReactNative.sendEvent("Add To Cart", {})
+            .then((resp: any) => console.log("Success: ", resp))
+            .catch((err: any) => console.error("Error:", err))
+        CooeeReactNative.sendEvent("Add To Wishlist", {
+            item: {
+                name: "hi"
+            }
+        })
             .then((resp: any) => console.log("Success: ", resp))
             .catch((err: any) => console.error("Error:", err))
 
 
     }, []);
 
-    /*const onSubmit = async () => {
+    const profile = () => {
+        navigation.navigate('Profile', {})
+    }
+    return (
+        <ImageBackground source={require('./banner.png')} resizeMode="stretch" style={styles.image}>
+            <Text onPress={onPress}>User ID: {result}</Text>
+            <TouchableOpacity onPress={showInfo} style={styles.margin_common}>
+                <Text style={styles.text_common}>Debug Info</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={profile} style={styles.margin_common}>
+                <Text style={styles.text_common}>Profile</Text>
+            </TouchableOpacity>
+        </ImageBackground>
+    )
+}
 
-        try {
-            const resp = await CooeeReactNative.sendEvent("Add To Cart", {"CE abcd": true})
-            Alert.alert("done", resp.toString())
-        } catch (e) {
-            Alert.alert("error", e.toString())
-        }
-    };*/
+export default function App() {
 
     return (
-        <View style={styles.container}>
-            <ImageBackground source={require('./banner.png')} resizeMode="stretch" style={styles.image}>
-                <Text onPress={onPress}>User ID: {result}</Text>
-                <TouchableOpacity onPress={showInfo} style={styles.margin_common}>
-                    <Text style={styles.text_common}>Debug Info</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={showInfo} style={styles.margin_common}>
-                    <Text style={styles.text_common}>Copy UserID</Text>
-                </TouchableOpacity>
-            </ImageBackground>
-        </View>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                    name="Home"
+                    component={HomeScreen}
+                />
+                <Stack.Screen name="Profile" component={Profile}/>
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
 
