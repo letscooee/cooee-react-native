@@ -1,97 +1,32 @@
-# cooee-react-native
+# React Native Plugin for Cooee SDK
 
-Cooee's React Native Plugin for hyper-personalised Mobile App Re-Engagement via Machine Learning
+![npm](https://img.shields.io/npm/v/@letscooee/react-native)
+![NPM](https://img.shields.io/npm/l/@letscooee/react-native)
+![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@letscooee/react-native)
+![npm type definitions](https://img.shields.io/npm/types/@letscooee/react-native)
 
-## Installation
 
-```sh
-npm install cooee-react-native
-```
+## What is Cooee?
 
-## Environment Setup
-### Android
-Add following updates to you `Manifest.xml`
+Let’s Cooee powers hyper-personalized and real time engagements for mobile apps based on machine learning. The SaaS platform, hosted on
+cloud infrastructure processes millions of user transactions and data attributes to create unique and contextual user engagement
+triggers for end users with simple SDK integration that requires no coding at mobile app level.
 
-```xml
-<!-- add following line to application tag -->
-<application 
-tools:replace="android:name"
-...
-/>
+For more information visit our [website](https://www.letscooee.com/) and [documentation](https://docs.letscooee.com/developers/react-native).
 
-<!-- APP_ID and APP_SECRET should be replaced with you credentials -->
-<meta-data
-    android:name="COOEE_APP_ID"
-    android:value="<APP_ID>" />
+## Features
 
-<meta-data
-    android:name="COOEE_APP_SECRET"
-    android:value="<APP_SECRET>" />
-```
-Open your `MainApplication` class present at `android/app/src/main/java/<yourpackage_name>/` and extend it with `Controller` class
+1. Plug and Play - Plugin is plug and play for mobile applications. That means it needs to be initialized with the Application Context, and it
+   will work automatically in the background.
+2. Independent of Application - Plugin is independent of the application. It will collect data points with zero interference from/to the
+   applications. Although applications can send additional data points (if required) to the Plugin using API’s.
+3. Rendering engagement triggers - Plugin will render the campaign trigger at real-time with the help of server http calls.
 
-```java
-import com.letscooee.CooeePlugin;
-...
+## Platforms
 
-public class MainApplication extends CooeePlugin implements ReactApplication {
-...
-}
-```
+- Android (Minimum Android 5.0 / API level 21)
+- iOS (Minimum deployment target iOS 13)
 
-### iOS
-Add the following lines to your `info.plist` (Note: APP_ID, APP_SECRET will be replace by credentials)
-```xml
-<key>NSBluetoothPeripheralUsageDescription</key>
-<string>App uses Bluetooth to find out nearby devices</string> 
+## Installation & Uses
 
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>App uses location to search retailer location</string>
-
-<key>CooeeAppID</key>
-<string><APP_ID></string>
-<key>CooeeSecretKey</key>
-<string><APP_SECRET></string>
-```
-
-Also setup your Apps `deployment-target` to `13.0`
-
-## Usage
-
-And then in you `js` or `tsx` import `CooeeReactNative` Module and start accessing methods.
-```js
-import CooeeReactNative from "cooee-react-native";
-
-// ...
-// get User ID
-const result = await CooeeReactNative.getUUID();
-
-// Update Screen Name
-CooeeReactNative.updateScreenName("HomeActivity");
-
-//Update User Data
-CooeeReactNative.updateUserData({ "name": "USER_NAME", "email": "USER_EMAIL", "mobile": "USER_MOBILE_NO" });
-
-//Submit events
-CooeeReactNative.sendEvent("EVENT_NAME", {"foo":"bar"});
-```
-
-We also send data back to app when user perform any action with trigger. Tah data is in `Map<String, Object>` format.
-
-To listen Teigger action add the flowing code block in your code:
-```js
-import { NativeEventEmitter, NativeModules } from 'react-native';
-
-const eventEmitter = new NativeEventEmitter(NativeModules.ToastExample);
-var eventListener = eventEmitter.addListener('onInAppButtonClick', (event) => {
-
-    console.log(event) // "event will contain data in Map<String,Object> format"
-});
-```
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
+For detailed installation & uses, Refer [React-Native](https://docs.letscooee.com/developers/react-native/get-started) documentation.
